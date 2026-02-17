@@ -1,7 +1,12 @@
 # 🇸🇦 Saudi Home Appliances Market Analysis (End-to-End Project)
 
 ## 📌 Project Overview
-This project focuses on analyzing the home appliances market in Saudi Arabia by scraping data from the top 4 retailers: Almanea, Extra, Alkhunaizan, and BHStore. The project covers the entire data pipeline: from automated web scraping to deep data cleaning in Excel, and finally, building a professional interactive dashboard in Power BI.
+This project focuses on analyzing the home appliances market in Saudi Arabia by scraping data from the top 4 retailers: Almanea, Extra, Alkhunaizan, and BHStore.  
+
+The project covers the complete data pipeline:
+- Automated Web Scraping (Python & Selenium)
+- Data Cleaning & Transformation (Excel Power Query)
+- Data Modeling & Visualization (Power BI)
 
 The analysis aims to answer key business questions such as:
 
@@ -12,85 +17,128 @@ The analysis aims to answer key business questions such as:
 ---
 
 ## 📂 Dataset Description
+
 The dataset was built from scratch and processed through multiple stages:
 
-- **Raw Data (Scraped):** 4 CSV files (one for each site) containing product names, prices (regular & promo), brands, and categories.
-- **Processed Files:** Individual Excel workbooks for each retailer where data was standardized and cleaned.
-- **Master Dataset:** A consolidated dataset (Appended) created during the project to facilitate cross-market comparison.
+### 🔹 Raw Data (Scraped)
+4 datasets extracted directly from retailer websites including:
+- Product Name  
+- Regular Price  
+- Promotional Price  
+- Brand  
+- Category  
+
+### 🔹 Processed Files
+Each retailer was cleaned and standardized separately using Excel Power Query.
+
+### 🔹 Master Dataset
+All retailers were appended into one consolidated dataset to enable cross-market comparison.
 
 ---
 
 ## ⚙️ Methodology
-The project followed these main steps:
 
-1. **Web Scraping (Python & Selenium):** Developed 4 custom scripts to handle dynamic content, scrolling, and pagination across different site architectures.
+### 1️⃣ Web Scraping (Python & Selenium)
+Developed 4 custom scraping scripts to handle:
+- Dynamic content loading
+- Infinite scrolling
+- Pagination
+- Different website structures
 
-2. **Data Cleaning & Transformation (Excel Power Query):**
-   - Removing duplicates and handling missing values.
-   - Standardizing inconsistent category names (e.g., fixing "Refrigerators" vs "Refrigerator").
-   - Merging categories (Washing Machines & Refrigerators) for each site.
+### 2️⃣ Data Cleaning & Transformation (Excel Power Query)
+- Removing duplicates
+- Handling missing values
+- Standardizing inconsistent category names
+- Unifying brand naming
+- Extracting Capacity (Kg / Liters) using Regex
+- Creating a unified Discount Percentage field
 
-3. **Data Integration:** Using Append queries to combine all retailers into one "Master Table".
+### 3️⃣ Data Integration
+Used Append Queries to combine all retailers into one Master Table.
 
-4. **Final Dashboard (Power BI):** Building an interactive dashboard with DAX measures, KPIs, and advanced visuals.
+### 4️⃣ Final Dashboard (Power BI)
+- Data Modeling
+- DAX Measures
+- KPIs
+- Advanced Visualizations
+- Interactive Slicers
 
 ---
 
-## 🔍 Exploratory Analysis (Excel & Power Query)
-During the cleaning phase in Excel, specific questions were addressed:
+## 🔍 Exploratory Analysis
 
-- How to handle the "Inconsistency" in brand naming across sites?
-- How to extract the "Capacity" (Kg/Liters) from product titles using Regex and Power Query?
-- Standardizing the "Discount Percentage" to be a unified numerical field.
+Key analytical challenges addressed:
+
+- Handling brand name inconsistency across platforms
+- Extracting structured attributes from unstructured product titles
+- Normalizing discount calculations across different pricing formats
 
 ---
 
 ## 📊 Final Dashboard
-The interactive Power BI dashboard provides a 360-degree view of the market:
 
-### Key Performance Indicators (KPIs)
-- Total Market Inventory (1.68K+ products)
-- Average Market Savings (40.38%)
-- Brand Variety (72 Brands)
-- Number of Monitored Websites (4)
+The interactive Power BI dashboard provides a 360° market overview.
 
-### Market Insights
-- **Price Share by Retailer:** Comparing average prices across stores.
-- **Discount Leaderboard:** Identifying which site is the "King of Offers".
-- **Brand Pricing Index:** Ranking brands from "Premium" to "Budget-friendly".
-- **Availability Matrix:** A detailed grid showing which brands are exclusive to certain retailers.
+### 📌 Key Performance Indicators (KPIs)
+- Total Market Inventory: 1.68K+ Products
+- Average Market Savings: 40.38%
+- Brand Variety: 72 Brands
+- Monitored Websites: 4
 
-### Interactivity
-- Slicers for Category (Refrigerator/Washing machines), Channel, and Brand.
+### 📌 Market Insights
+- Price Share by Retailer
+- Discount Leaderboard ("King of Offers")
+- Brand Pricing Index (Premium → Budget)
+- Availability Matrix (Retailer Exclusivity)
+
+### 📌 Interactivity
+- Category Slicer (Refrigerators / Washing Machines)
+- Retailer Filter
+- Brand Filter
 
 ---
 
 ## 🖼️ Visuals & Preview
-The dashboard layout is designed for clarity and professional storytelling.
 
-**Main Market Dashboard (KPIs, Charts, and Filters)**  
-(Insert your Dashboard Screenshot Here)
+### 📊 Main Market Dashboard
 
-**Data Transformation Process (Power Query & Excel)**  
-(Insert a screenshot of your Excel Sheets or Power Query steps)
+<p align="center">
+  <img src="dashboard_preview.png" width="1000">
+</p>
 
 ---
 
 ## 💡 Key Insights
-- **Discount Trends:** The market shows a high average discount rate (~40%), with specific retailers like Alkhunaizan leading in aggressive pricing.
-- **Brand Dominance:** A few global brands (Samsung, LG) have a massive presence, but local or budget-friendly brands are catching up in specific stores.
-- **Pricing Strategy:** There is a noticeable price variance for the same product category between retailers, suggesting high competition.
+
+- The Saudi appliances market shows a high average discount rate (~40%).
+- Strong competition exists between retailers with noticeable price variance.
+- Global brands like Samsung and LG dominate inventory share.
+- Some retailers apply aggressive discount strategies to gain pricing advantage.
 
 ---
 
 ## 🛠️ Tools Used
-- Python (Selenium & BeautifulSoup): Automated Data Extraction.
-- Excel Power Query: Data cleaning, standardization, and merging.
-- Power BI: Data modeling (DAX) and interactive visualizations.
+
+- Python (Selenium & BeautifulSoup) → Web Scraping  
+- Excel Power Query → Data Cleaning & Transformation  
+- Power BI → Data Modeling & Visualization  
 
 ---
 
-## 📁 Project Files
-- `Scrapers/`: Python scripts for the 4 websites.
-- `Cleaned_Data/`: Final Excel workbooks after Power Query processing.
-- `Market_Analysis.pbix`: The full Power BI project file.
+## 📁 Project Structure
+
+### 🐍 Web Scraping Scripts
+- `almanea_code.py`
+- `extra.py`
+- `alkhunaizan.py`
+- `BH.py`
+
+### 📊 Cleaned Excel Files
+- `Almanea_ALL.xlsx`
+- `Extra_All.xlsx`
+- `alkhunaizan_ALL.xlsx`
+- `BH_ALL.xlsx`
+
+### 📈 Power BI Dashboard
+- `Saudi Home Appliances.pbix`
+
